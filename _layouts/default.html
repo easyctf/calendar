@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<title>CTF Calendar</title>
+		{% for style in page.stylesheets %}
+			<link rel="stylesheet" href="{{ style }}" />
+		{% endfor %}
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI" crossorigin="anonymous"></script>
+		{% for script in page.scripts %}
+			<script src="{{ script }}"></script>
+		{% endfor %}
+	</head>
+	<body>
+		{{ content }}
+	</body>
+</html>

@@ -1,0 +1,48 @@
+---
+layout: default
+stylesheets:
+- css/calendar.css
+scripts:
+- js/countdown.min.js
+---
+
+<div class="card-container">
+	{% for event in site.data.events %}
+		<div class="card">
+			<center>
+				<h2 class="ctf-name">{{ event.name }}</h2>
+				<a class="ctf-date" href="javascript:$('#toggle-{{ event.start_timestamp }}').slideToggle();" target="_blank">{{ event.start_timestamp | date: "%B %d, %Y" }}</a>
+				<p id="toggle-{{ event.start_timestamp }}" style="display:none;" class="update_clock">{{ event.start_timestamp }}</p>
+				<hr>
+				<table class="ctf-info">
+					<tr>
+						<th>Organizer</th>
+						<td>{{ event.organizer }}</td>
+					</tr>
+					<tr>
+						<th>Website</th>
+						<td><a href="{{ event.website }}" target="_blank">{{ event.website }}</a></td>
+					</tr>
+				</table>
+				<p>{{ event.description }}</p>
+			</center>
+		</div>
+	{% endfor %}
+</div>
+
+<div class="footer">
+	Site made by the EasyCTF Team with &hearts;.
+</div>
+
+<script type="text/javascript">
+	var update = function() {
+		$(".update_clock").each(function(index, obj) {
+			var x = parseInt(obj.id.replace("toggle-", "")) * 1000;
+			obj.innerHTML = countdown(new Date(x)).toString();
+		});
+		requestAnimationFrame(update);
+	};
+	$(document).ready(function() {
+		requestAnimationFrame(update);
+	});
+</script>
