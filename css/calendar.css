@@ -38,6 +38,7 @@ a {
 	background-color: #FFF;
 	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
 	padding: 20px 20% 40px 20%;
+	margin-bottom: 40px;
 }
 
 .card h2.ctf-name {
