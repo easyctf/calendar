@@ -1,5 +1,11 @@
 ---
 -
+  name: LASACTF
+  start_timestamp: 1458406800
+  organizer: LASACTF Team
+  website: http://lasactf.com
+  description: LASACTF is a national computer science and security competition run by students at LASA High School in Austin, Texas.
+-
   name: EasyCTF 2016
   start_timestamp: 1473667925
   organizer: EasyCTF Team
