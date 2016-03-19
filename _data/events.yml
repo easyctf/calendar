@@ -12,6 +12,12 @@
   website: https://lasactf.com
   description: "LASACTF is a national computer science and security competition run by students at LASA High School in Austin, Texas."
 -
+  name: PACTF
+  start_timestamp: 1458354088
+  organizer: Phillips Academy CTF Team
+  website: https://pactf.com/
+  description: "Want to capture some flags, but don't have two weeks to spend CTFing? Try PACTF! Run by students at Phillips Academy in Andover, Massachussetts."
+-
   name: CAMSCTF
   start_timestamp: 1458493200
   organizer: CAMS
