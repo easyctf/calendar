@@ -14,7 +14,7 @@ Navigate to `_data/events.yml`. Create a new event by following this format:
   start_timestamp: 1473667925
   organizer: CTF Team
   website: http://www.yourctf.com
-  description: This is an amazing CTF.
+  description: "This is an amazing CTF."
 ```
 
 You can use any CTFs listed there already as an example.
