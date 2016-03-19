@@ -6,13 +6,17 @@ scripts:
 - js/countdown.min.js
 ---
 
-<div class="card-container">
+<div id="past" class="card-container" style="display:none;">
+	<center style="margin-bottom:40px;">
+		<a href="javascript:hide_past();" id="upcoming_events">Upcoming Events</a>
+	</center>
+
 	{% for event in site.data.events %}
 		{% capture now_unix %}{{ site.time | date: "%s" }}{% endcapture %}
 		{% assign now_unix = now_unix | plus: 0 %}
 		{% assign event_unix = event.start_timestamp | plus: 0 %}
-		{% if event_unix > now_unix %}
-			<div class="card">
+		{% if event_unix < now_unix %}
+			<div class="card" data-time="{{ event.start_timestamp }}">
 				<center>
 					<h2 class="ctf-name">{{ event.name }}</h2>
 					<a class="ctf-date" href="javascript:$('#toggle-{{ event.start_timestamp }}').slideToggle();" target="_blank">{{ event.start_timestamp | date: "%B %d, %Y" }}</a>
@@ -35,6 +39,39 @@ scripts:
 	{% endfor %}
 </div>
 
+<div id="upcoming" class="card-container">
+	{% for event in site.data.events %}
+		{% capture now_unix %}{{ site.time | date: "%s" }}{% endcapture %}
+		{% assign now_unix = now_unix | plus: 0 %}
+		{% assign event_unix = event.start_timestamp | plus: 0 %}
+		{% if event_unix > now_unix %}
+			<div class="card" data-time="{{ event.start_timestamp }}">
+				<center>
+					<h2 class="ctf-name">{{ event.name }}</h2>
+					<a class="ctf-date" href="javascript:$('#toggle-{{ event.start_timestamp }}').slideToggle();" target="_blank">{{ event.start_timestamp | date: "%B %d, %Y" }}</a>
+					<p id="toggle-{{ event.start_timestamp }}" style="display:none;" class="update_clock">{{ event.start_timestamp }}</p>
+					<hr>
+					<table class="ctf-info">
+						<tr>
+							<th>Organizer</th>
+							<td>{{ event.organizer }}</td>
+						</tr>
+						<tr>
+							<th>Website</th>
+							<td><a href="{{ event.website }}" target="_blank">{{ event.website }}</a></td>
+						</tr>
+					</table>
+					<p>{{ event.description }}</p>
+				</center>
+			</div>
+		{% endif %}
+	{% endfor %}
+
+	<center style="margin-top:40px;">
+		<a href="javascript:show_past();" id="past_events">Past Events</a>
+	</center>
+</div>
+
 <center style="margin-top:40px;">
 	<p>Want to see your CTF here? Add it to <a href="https://github.com/easyctf/calendar" target="_blank">this repository</a>.</p>
 </center>
@@ -44,6 +81,14 @@ scripts:
 </div>
 
 <script type="text/javascript">
+	var show_past = function() {
+		$("#upcoming").slideUp("fast");
+		$("#past").slideDown("fast");
+	};
+	var hide_past = function() {
+		$("#upcoming").slideDown("fast");
+		$("#past").slideUp("fast");
+	};
 	var update = function() {
 		$(".update_clock").each(function(index, obj) {
 			var x = parseInt(obj.id.replace("toggle-", "")) * 1000;
