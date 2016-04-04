@@ -18,6 +18,12 @@
   website: http://camsctf.com
   description: "A Capture the Flag competition created by the California Academy of Mathematics and Science for middle and high school students."
 -
+  name: sCTF 2016 Q1
+  start_timestamp: 1460073600
+  organizer: sCTF Team
+  website: https://compete.sctf.io/
+  description: "sCTF 2016 Q1 registration is now open! sCTF is a jeopardy-style CTF competition focused on high school and middle school students. Get you and your team registered at https://sctf.io/getregistered! The competition will be held from April 8th to April 15th, starting and ending at 8:00PM EDT. It will feature many problems of all difficulties, written by a team of 11 high school and university students. Prizes are to be announced soon. Check out the main organization at https://sctf.io as well!"
+-
   name: angstromCTF
   start_timestamp: 1460131200
   organizer: Montgomery Blair High School
