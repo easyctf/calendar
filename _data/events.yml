@@ -42,6 +42,12 @@
   website: https://tjctf.org
   description: "A Capture the Flag cybersecurity competition for high school students, run by the Thomas Jefferson High School for Science and Technology's Computer Security Club."
 -
+  name: ABCTF
+  start_timestamp: 1468540800
+  organizer:ABCTF Team
+  website: https://abctf.xyz
+  description: "ABCTF is an online cybersecurity competition aiming to introduce new people to the topic and challenge seasoned competitors."
+-
   name: EasyCTF
   start_timestamp: 1480179600
   organizer: EasyCTF Team
