@@ -48,6 +48,12 @@
   website: https://abctf.xyz
   description: "ABCTF is an online cybersecurity competition that aims to introduce new people to the topic and challenge seasoned competitors."
 -
+  name: WeebCTF
+  start_timestamp: 1469206800
+  organizer: "Weebs of #random"
+  website: https://weebctf.easyctf.com
+  description: "we got waifus. come and play"
+-
   name: EasyCTF
   start_timestamp: 1480179600
   organizer: EasyCTF Team
